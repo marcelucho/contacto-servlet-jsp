@@ -13,8 +13,8 @@
     </head>
     <body>
         <%
-            for(int i=1 ; i < 7; i++)
-            out.println("<h"+(7-i)+">" + i+"</h>"+(7-i)+">");
+            for(int i= 1; i<7; i++)
+            out.println("<h"+(7-i)+">" +"h"+i+"</h>");
             %>
     </body>
 </html>
