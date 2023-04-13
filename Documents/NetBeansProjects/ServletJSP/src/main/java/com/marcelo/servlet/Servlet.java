@@ -13,7 +13,13 @@ public class Servlet extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest resq, HttpServletResponse resp) throws ServletException, IOException{
+        String param = resq.getParameter("nombre");
+        if(param == null){
         resp.getWriter().append("Hola Mundo desde DOget otra vez");
+        }else{
+            String saludo = "Hola, " + param + "!";
+            resp.getWriter().append(saludo);
+        }
     }
     
 }
