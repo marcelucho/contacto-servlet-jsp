@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 
 /**
  *
- * @author Luis
+ * @author Luis Marcelo
  */
 @WebServlet(urlPatterns ="/ContactoServlet")
 public class ContactoServlet extends HttpServlet{
