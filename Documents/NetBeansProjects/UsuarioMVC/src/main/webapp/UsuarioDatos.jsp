@@ -9,9 +9,16 @@
     <body>
         <h1>Datos Usuario</h1>
         <form>
-           Nombre: <%= request.getAttribute("nombre") %>
+            <fieldset>
+           <label for="id">ID: </label> <input type="number" name="id" value="<%= request.getAttribute("id") %>"> 
            <br>
-           Email: <%= request.getAttribute("email") %> 
+           <label for="name">Nombre: </label> <input type="text" name="name" value="<%= request.getAttribute("nombre") %>">   
+           <br>
+           <label for="email">Email: </label> <input type="email" name="email" value="<%= request.getAttribute("email") %>"> 
+           <br>
+           <label for="nacionalidad">Nacionalidad: </label> <input type="text" name="nacionalidad" value="<%= request.getAttribute("nacionalidad") %>"> 
+           <br>
+           </fieldset>          
         </form>
     </body>
 </html>

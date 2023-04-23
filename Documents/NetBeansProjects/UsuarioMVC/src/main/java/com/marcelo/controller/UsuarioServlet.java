@@ -16,15 +16,19 @@ public class UsuarioServlet extends HttpServlet {
     Usuario user = new Usuario();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+         user.setId(Integer.parseInt(req.getParameter("id")));
+         user.setNombre(req.getParameter("nombre"));
+         user.setEmail(req.getParameter("email"));        
+         user.setNacionalidad(req.getParameter("nacionalidad"));
+
+
+        req.setAttribute("id", user.getId());
         req.setAttribute("nombre", user.getNombre());
         req.setAttribute("email", user.getEmail());
-        
-        req.getServletContext().getRequestDispatcher("/UsuarioDatos.jsp").forward(req, resp);
-        
-        user.setNombre("nombre");
-        user.setEmail("email");
-        
-        resp.sendRedirect(req.getContextPath()+ "/UsuarioServlet");        
+        req.setAttribute("nacionalidad", user.getNacionalidad());
+
+
+        req.getServletContext().getRequestDispatcher("/UsuarioDatos.jsp").forward(req, resp);       
         
     }
 }
