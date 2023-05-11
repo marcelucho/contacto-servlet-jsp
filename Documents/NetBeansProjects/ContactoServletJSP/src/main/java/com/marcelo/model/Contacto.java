@@ -3,6 +3,8 @@ package com.marcelo.model;
 
 public class Contacto {
     //Atributos del modelo
+    
+    private Integer id;   
     private String nombre;
     private String apellido;
     private String email;
@@ -12,39 +14,37 @@ public class Contacto {
     public Contacto(){
             
     }
-    
-    public Contacto(String name){
-        this.nombre= name;
-        
-    }
-    
     // getter y setters
-    
+
+    public Integer getId() {
+        return id;
+    };    
     public String getNombre(){
         return nombre;
-    }
+    };
     public String getApellido(){
-        return nombre;
-    }
-    public String getemail(){
-        return nombre;
-    }
+        return apellido;
+    };
+    public String getEmail(){
+        return email;
+    };
     public String getDescripcion(){
-        return nombre;
-    }
+        return descripcion;
+    };
 
-    
-    public void setNombre(String name){
-        this.nombre = name;
+    public void setId(Integer id) {
+        this.id = id;
     }
-    public void setApellido(String ape){
-        this.apellido.append(ape);
- = ape;
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
-    public void setEmail(String correo){
-        this.email = correo;
+    public void setApellido(String apellido){
+        this.apellido = apellido;
+    }
+    public void setEmail(String email){
+        this.email = email;
     }
     public void setDescripcion(String descrip){
-        this.descripcion = decrip;
+        this.descripcion = descrip;
     }
 }
