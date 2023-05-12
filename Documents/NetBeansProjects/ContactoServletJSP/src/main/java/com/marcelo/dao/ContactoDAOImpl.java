@@ -48,10 +48,10 @@ public class ContactoDAOImpl implements ContactoDAO {
             }
 
         } catch (Exception e) {
-            
+
             System.out.println("Error en la consulta");
         }
-        
+
         return listado;
 
     }
@@ -65,33 +65,33 @@ public class ContactoDAOImpl implements ContactoDAO {
             // inicialización de la consulta
             PreparedStatement prest = this.objConnection.prepareStatement(consulta);
             //Agregar los datos dentro de la consulta
-            
+
             prest.setString(1, objContacto.getNombre());
             prest.setString(2, objContacto.getApellido());
             prest.setString(3, objContacto.getEmail());
             prest.setString(4, objContacto.getDescripcion());
-            
+
             int count = prest.executeUpdate();
             ResultSet rs = null;
             rs = prest.executeQuery("SELECT LAST_INSERT_ID()");
-            
+
             int autokey = -1;
-            if(rs.next()){
+            if (rs.next()) {
                 autokey = rs.getInt("id");
                 objContacto.setId(autokey);
                 System.out.println("Ultimo id introducido" + autokey);
-                               
-            }else{
+
+            } else {
                 System.out.println("No existe dato de ID");
             }
-            
+
         } catch (Exception e) {
-            
+
             System.out.println("Error al insertar");
-            
+
         }
         return objContacto;
-   }
+    }
 
     @Override
     public Contacto findById(Integer id) {
