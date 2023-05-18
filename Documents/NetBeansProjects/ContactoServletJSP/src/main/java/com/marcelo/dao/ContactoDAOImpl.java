@@ -58,7 +58,7 @@ public class ContactoDAOImpl implements ContactoDAO {
 
     @Override
     public Contacto insert(Contacto objContacto) {
-        String consulta = "INSERT INTO contactos (nombre, apellido, mail, descripcion) VALUES (?,?,?,?)";
+        String consulta = "INSERT INTO contactos (nombre, apellido, email, descripcion) VALUES (?,?,?,?)";
         try {
             this.objConexion.conectar();
             this.objConnection = this.objConexion.getJdbcConnection();
@@ -87,7 +87,7 @@ public class ContactoDAOImpl implements ContactoDAO {
 
         } catch (Exception e) {
 
-            System.out.println("Error al insertar");
+            System.out.println("Error al insertar " + e);
 
         }
         return objContacto;

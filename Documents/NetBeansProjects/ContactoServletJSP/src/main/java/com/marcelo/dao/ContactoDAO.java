@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.marcelo.dao;
 
 import com.marcelo.model.Contacto;
 import java.util.List;
 
-/**
- *
- * @author Luis
- */
 public interface ContactoDAO {
     //Metodo que devuelve el listado de objetos
     public List<Contacto> findAll();
